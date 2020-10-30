@@ -2,8 +2,6 @@ public class Vector2D
 {
     private double x;
     private double y;
-    double sumX = 0, sumY = 0;
-
 
     public Vector2D(double x, double y)
     {
@@ -20,26 +18,35 @@ public class Vector2D
     {
         this.y = y;
     }
+
+    public void printRes(String operation, double a, double b)
+    {
+        System.out.println(operation + " of the vectors is (" + a + ';'+b+')'+'.' );
+    }
+    public void printResMult(double a, double b)
+    {
+        System.out.println("Multiplication of the vector and the constant is (" + a + ';'+b+')'+'.' );
+    }
+
     public void sumOfVectors(Vector2D other)
     {
-        this.sumX = this.x + other.x;
-        this.sumY = this.y + other.y;
-        System.out.println("Sum of the vectors is (" + this.sumX + ';'+this.sumY+')'+'.' );
-        sumX = 0; sumY = 0;
+        this.x += other.y;
+        this.y += other.y;
+        printRes("Sum", this.x, this.y);
+
     }
     public void subOfVectors(Vector2D other)
     {
-        sumX = this.x - other.x;
-        sumY = this.y - other.y;
-        System.out.println("Subtraction of the vectors is (" + sumX + ';'+sumY+')'+'.' );
-        sumX = 0; sumY = 0;
+
+        this.x -= other.y;
+        this.y -= other.y;
+        printRes("Sum", this.x, this.y);
+        printRes("Subtraction", this.x, this.y);
     }
     public void multOfVectors(double number)
     {
-        sumX = 1; sumY = 1;
-        sumX = this.x * number;
-        sumY = this.y * number;
-        System.out.println("Multiplication of the vector and the constant  is (" + sumX + ';'+sumY+')'+'.' );
-        sumX = 0; sumY = 0;
+        this.x *= number;
+        this.y *= number;
+        printResMult( this.x, this.y);
     }
 }
