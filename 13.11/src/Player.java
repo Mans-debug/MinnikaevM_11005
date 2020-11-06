@@ -5,7 +5,7 @@ import java.util.Random;
 public class Player
 {
     private String userName;
-    private double healthPoints = 100.0;
+    private double healthPoints = 20.0;
     double punch;
     public Player(String userName)
     {

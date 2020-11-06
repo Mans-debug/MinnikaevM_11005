@@ -30,7 +30,7 @@ public class Game
         if(punchedOrNot(another) == true)
         {
             one.setHealthPoints(one.getHealthPoints() - one.punch);
-            System.out.println("Health status: " + one.getHealthPoints());
+            System.out.println(one.getUserName() + " Health status: " + one.getHealthPoints());
         }
         else
             System.out.println(another.getUserName() + " MISSED");

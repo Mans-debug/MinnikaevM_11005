@@ -8,7 +8,7 @@ public class Main
 
         Player first = new Player("Димон");
         Player second = new Player("Булат");
-        
+
 
         while((first.isDead() == false)&&(second.isDead() == false))
         {
@@ -16,6 +16,7 @@ public class Main
             Game.setChance(second);
             Game.minusHP(first,second);
             Game.minusHP(second, first);
+            System.out.println("\n\n");
         }
 
 
