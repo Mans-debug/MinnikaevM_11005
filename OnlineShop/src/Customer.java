@@ -13,4 +13,9 @@ public class Customer
         this.age = age;
 
     }
+
+    public String getName()
+    {
+        return name;
+    }
 }

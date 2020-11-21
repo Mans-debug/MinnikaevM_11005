@@ -18,6 +18,7 @@ public class Order
 
     public void setOrderList(int ... arr)
     {
+
         for (int i = 0; i < arr.length; i++)
         {
             purchasedItems.add((Integer) arr[i]);
@@ -30,10 +31,11 @@ public class Order
 
     void showAllBoughtItems()
     {
+        System.out.printf("%s's purchase list", customer.getName());
         for (int i = 0; i < purchasedItems.size(); i++)
         {
             Integer temp = Integer.valueOf(purchasedItems.get(i));
-            System.out.println("Product name" + product[temp].getNameOfProduct());
+            System.out.println("Product name: " + product[temp].getNameOfProduct());
             System.out.println("Manufacturer: " + product[temp].getManufacturer());
             System.out.println("Price: " + product[temp].getPrice());
             if(i != purchasedItems.size() - 1)

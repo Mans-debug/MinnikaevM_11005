@@ -5,9 +5,9 @@ public class Product
     private int idOfProduct;
     private String nameOfProduct;
     private double price;
-    private String manufacturer = "none";
+    private String manufacturer;
 
-    Product(int idOfProduct, String nameOfProduct, double price)
+    Product(int idOfProduct, String nameOfProduct, double price, String manufacturer)
     {
         this.idOfProduct = idOfProduct;
         this.nameOfProduct = nameOfProduct;
