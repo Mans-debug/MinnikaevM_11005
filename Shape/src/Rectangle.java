@@ -1,7 +1,5 @@
 public class Rectangle extends Shape
 {
-    private double a;
-    private double b;
     private double area;
     public Rectangle(double a, double b)
     {
@@ -11,7 +9,7 @@ public class Rectangle extends Shape
     public Rectangle(double a)
     {
         super(a);
-        area = a * b;
+        area = a * a;
     }
 
     @Override

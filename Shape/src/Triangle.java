@@ -1,7 +1,7 @@
 public class Triangle extends Shape
 {
-    private double h;
-    private double w;
+   /* private double h;
+    private double w;*/
     private double area;
 
     public Triangle(double h, double w)
