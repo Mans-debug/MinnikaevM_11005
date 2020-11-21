@@ -1,14 +1,13 @@
 public class Triangle extends Shape
 {
     private double h;
-    private double x;
+    private double w;
     private double area;
 
-    public Triangle(double h, double x)
+    public Triangle(double h, double w)
     {
-        this.h = h;
-        this.x = x;
-        area = h * x / 2;
+        super(h, w);
+        area = h * w / 2;
     }
     @Override
     void showArea()

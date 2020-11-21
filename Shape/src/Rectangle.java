@@ -5,8 +5,12 @@ public class Rectangle extends Shape
     private double area;
     public Rectangle(double a, double b)
     {
-        this.a = a;
-        this.b = b;
+       super(a, b);
+        area = a * b;
+    }
+    public Rectangle(double a)
+    {
+        super(a);
         area = a * b;
     }
 

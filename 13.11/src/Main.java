@@ -12,11 +12,9 @@ public class Main
 
         while((first.isDead() == false)&&(second.isDead() == false))
         {
-            Game.setChance(first);
-            Game.setChance(second);
             Game.minusHP(first,second);
             Game.minusHP(second, first);
-            System.out.println("\n\n");
+            System.out.println("\n\n\n");
         }
 
 

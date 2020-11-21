@@ -1,9 +1,20 @@
-public class Shape
+public abstract class Shape
 {
-    protected double area = 666.666;
-
-    void showArea()
+    private double height;
+    private double width;
+    Shape()
     {
-        System.out.println("Area equals " + area);
+
     }
+    Shape(double h, double width)
+    {
+        height = h;
+        width = width;
+    }
+    Shape(double height)
+    {
+        this.height = height;
+    }
+    abstract void showArea();
+
 }

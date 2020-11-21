@@ -6,7 +6,7 @@ public class Circle extends Shape
 
     public Circle(double r)
     {
-        this.r = r;
+        super(r);
         area = pi * r * r;
     }
     @Override
