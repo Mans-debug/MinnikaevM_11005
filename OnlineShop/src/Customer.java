@@ -16,7 +16,8 @@ public class Customer
         this.age = age;
 
     }
-    public Customer(String name, int id, String sex, int age, int...orders)
+
+    public Customer(String name, int id, String sex, int age, Product...orders)
     {
         this.name = name;
         this. id = id;
@@ -25,23 +26,23 @@ public class Customer
         makeNewOrder(orders);
     }
 
-    void makeNewOrder(int...idies)
+    void makeNewOrder(Product...orders)
     {
-        Order order = new Order(idies);
+        Order order = new Order(orders);
         listOfOrder.add(order);
     }
-    void addNewPurchase(int...purchases)
+    void addNewPurchase(Product...purchases)
     {
         Order order  = new Order(purchases);
         listOfOrder.add(order);
     }
-    void showAllBoughtProducts(Product[] products)//передается массив продуктов, для того чтобы класс заказов знал,
+    void showAllBoughtProducts()//передается массив продуктов, для того чтобы класс заказов знал,
     // откуда ему брать элементы
     {
         System.out.println(name + "'s history of purchases: ");
         for (int i = 0; i < listOfOrder.size(); i++)
         {
-            listOfOrder.get(i).getProducts(products);
+           listOfOrder.get(i).showProducts();
         }
     }
 

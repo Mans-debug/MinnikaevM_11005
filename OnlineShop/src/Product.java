@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class Product
 {
@@ -19,7 +19,7 @@ public class Product
         this.price = price;
     }
 
-    public void getItem()
+    public void printItem()
     {
         System.out.printf("Name: %s\n" +
                 "Manufacturer: %s\n" +
@@ -28,6 +28,7 @@ public class Product
                 getNameOfProduct(),getManufacturer(),getPrice(),getIdOfProduct());
         System.out.println("_____________________________________________________");
     }
+
 
     public int getIdOfProduct()
     {

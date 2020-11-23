@@ -5,29 +5,23 @@ import java.util.ArrayList;
 public class Order
 {
     private int itemID;//предмет который клиент хочет купить
-    private ArrayList <Integer> purchasedItems = new ArrayList();
+    private ArrayList <Product> purchasedItems = new ArrayList();
     private Customer customer;
-    private Product product;
-
-    //если у покупателя не было покупок в магазине
-    public Order(int...itemIDs)
+    public Order(Product...goods)
     {
-        for (int i = 0; i < itemIDs.length; i++)
+        for (int i = 0; i < goods.length; i++)
         {
-            purchasedItems.add(itemIDs[i]);
+            purchasedItems.add(goods[i]);
         }
     }
 
 
-    public ArrayList<Integer> getPurchasedItems()
-    {
-        return purchasedItems;
-    }
-    public void getProducts(Product[] products)
+
+    public void showProducts()
     {
         for (int i = 0; i < purchasedItems.size(); i++)
         {
-            products[purchasedItems.get(i)].getItem();
+            purchasedItems.get(i).printItem();
         }
     }
 }
