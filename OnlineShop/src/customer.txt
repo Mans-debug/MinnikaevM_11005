@@ -1,0 +1,3 @@
+Jeniffer 348 female 23
+Peter 194 male 12 apple 20 ru
+Dolores 1394 female 75 products[6], products[5]

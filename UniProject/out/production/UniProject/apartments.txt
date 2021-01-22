@@ -1,0 +1,12 @@
+1 ApartmentPrestige.LOW 1
+2 ApartmentPrestige.LOW 2
+3 ApartmentPrestige.LOW 3
+4 ApartmentPrestige.LOW 4
+5 ApartmentPrestige.MEDIUM 1
+6 ApartmentPrestige.MEDIUM 2
+7 ApartmentPrestige.MEDIUM 3
+8 ApartmentPrestige.MEDIUM 4
+9 ApartmentPrestige.ELITE 1
+10 ApartmentPrestige.ELITE 2
+11 ApartmentPrestige.ELITE 3
+12 ApartmentPrestige.ELITE 4

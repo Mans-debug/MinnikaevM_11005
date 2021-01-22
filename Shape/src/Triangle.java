@@ -9,7 +9,7 @@ public class Triangle extends Shape
         super(h, w);
         area = h * w / 2;
     }
-    @Override
+
     void showArea()
     {
         System.out.println("Area of the triangle is " + area);

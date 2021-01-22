@@ -7,6 +7,7 @@ public class Customer
     private String sex;
     private int age;
     ArrayList<Order> listOfOrder = new ArrayList<Order>();
+    ArrayList<Integer> orderIds = new ArrayList<>();
 
    public Customer(String name, int id, String sex, int age)
     {
@@ -26,10 +27,21 @@ public class Customer
         makeNewOrder(orders);
     }
 
+    public int getId() {
+       return id;
+    }
+
+    public ArrayList<Order> getOrders(){
+       return listOfOrder;
+}
+
     void makeNewOrder(Product...orders)
     {
         Order order = new Order(orders);
         listOfOrder.add(order);
+    }
+    public void makeNewOrder(int...products){
+       listOfOrder.add(new Order(products));
     }
     void addNewPurchase(Product...purchases)
     {

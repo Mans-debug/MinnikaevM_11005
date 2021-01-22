@@ -1,35 +1,49 @@
 import java.sql.*;
 
-public class Test {
-    /**
-     * Connect to a sample database
-     */
-    public static void connect() {
-        Connection conn = null;
-        try {
-            // db parameters
-            String url = "jdbc:sqlite:D:\\Programs\\sqlite\\project.db";
-            // create a connection to the database
-            conn = DriverManager.getConnection(url);
+/**
+ * This program demonstrates making JDBC connection to a SQLite database.
+ *
+ * @author www.codejava.net
+ */
+public class Test
+{
 
-            System.out.println("Connection to SQLite has been established.");
+    public static void main(String[] args)
+    {
+        try
+        {
+            Class.forName("org.sqlite.JDBC");
+            String dbURL = "jdbc:sqlite:D:\\Programs\\sqlite\\product.db";
+            Connection conn = DriverManager.getConnection(dbURL);
+            if (conn != null)
+            {
+                String query = "select * from Customers;";
+                try (Statement stmt = conn.createStatement())
+                {
+                    ResultSet rs = stmt.executeQuery(query);
+                    while (rs.next())
+                    {
+                        int id = rs.getInt("id");
+                        String firstName = rs.getString("firstName");
+                        String secondName = rs.getString("secondName");
 
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-                    conn.close();
+                        System.out.println(id + ", " + firstName + " " + secondName);
+                    }
                 }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
+                catch (SQLException e)
+                {
+                    e.printStackTrace();
+                }
+
             }
+            conn.close();
+        } catch (ClassNotFoundException ex)
+        {
+            ex.printStackTrace();
+        } catch (SQLException ex)
+        {
+            ex.printStackTrace();
         }
-    }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        connect();
+
     }
 }

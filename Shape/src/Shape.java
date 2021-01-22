@@ -4,7 +4,7 @@ public abstract class Shape
     private double width;
     Shape()
     {
-
+        System.out.println("Ку привет дарова");
     }
     Shape(double h, double width)
     {

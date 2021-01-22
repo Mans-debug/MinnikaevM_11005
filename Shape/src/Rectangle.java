@@ -12,7 +12,7 @@ public class Rectangle extends Shape
         area = a * a;
     }
 
-    @Override
+
     void showArea()
     {
         System.out.println("Area of the rectangle equals " + area);

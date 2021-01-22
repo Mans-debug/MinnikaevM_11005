@@ -1,11 +1,42 @@
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 //композиция//дата классы//заполнение массива объектов с помощью Int[] and String[]
 public class Main
 {
+    ArrayList<Customer> listOFCustomers = generateCustomers();
+
+    static ArrayList<Customer> generateCustomers()
+    {
+        ArrayList<Customer> customers = new ArrayList<Customer>();
+        try
+        {
+            Scanner sc = new Scanner(new FileReader("C:\\Users\\mansu\\IdeaProjects\\MinnikaevM_11005\\OnlineShop\\src\\customer.txt"));
+            while(sc.hasNext())
+            {
+                customers.add(
+                        new Customer(sc.next(), sc.nextInt(), sc.next(), sc.nextInt() ) );
+            }
+
+        } catch (IOException e)
+        {
+            System.out.println("File has not been found");
+        }
+
+        return customers;
+    }
 
     public static void main(String[] args)
-    {   
-        Product[] products = new Product[15];
+    {
+        ArrayList<Customer> listOFCustomers = generateCustomers();
+
+
+        System.out.println(listOFCustomers.get(0).getName());
+
+
+       /* Product[] products = new Product[15];
+
 
         products[0] = new Product(0, "none", 0, "none");
         products[1] = new Product(1, "MAGA cap", 6.66, "D. Trump");
@@ -21,13 +52,18 @@ public class Main
         clients[1] = new Customer("Peter", 194, "male", 12, products[2], products[4]);
         clients[2] = new Customer("Dolores", 1394, "female", 75, products[6], products[5]);
 
-        clients[0].showAllBoughtProducts();
+       *//* clients[0].showAllBoughtProducts();
         clients[0].addNewPurchase(products[4], products[6], products[3]);
 
         clients[0].showAllBoughtProducts();
         clients[1].showAllBoughtProducts();
         clients[2].showAllBoughtProducts();
+*//*
 
+        clients[1].makeNewOrder(1, 2, 3, 4);
+
+        Shop shop = new Shop(products, clients);
+        shop.printCustomerOrders(194);*/
 
         
     }

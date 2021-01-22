@@ -21,6 +21,18 @@ public class Administrator
     {
     }
 
+    public  Customer findName(String firstName, String secondName)//в админа
+    {
+        Customer customer = new Customer(0, "0", "0");
+        for (int i = 0; i < customers.length; i++)
+        {
+            if ((customers[i].getName().equals(firstName)) && (customers[i].getSecondName().equals(secondName)))
+            {
+                customer = customers[i];
+            }
+        }
+        return customer;
+    }
     public int validateOrder(Request request)
     {
         requestList.add(request);
@@ -40,7 +52,7 @@ public class Administrator
         return idOfRoom;
     }
 
-    public static void login(Administrator adm)
+    public void login()
     {
         System.out.println("If you are willing to quit at some stage of the program, you can type 666\nIt'll stop it");
 
@@ -59,7 +71,7 @@ public class Administrator
         }
         System.out.println();
 
-        Customer customer = Customer.findName(firstName, secondName);
+        Customer customer = findName(firstName, secondName);
         if (customer.getId() == 0)
             return;
 
@@ -158,7 +170,7 @@ public class Administrator
 
 
 
-        int number = adm.validateOrder(customer.newRequest(room, day, prestige));
+        int number = validateOrder(customer.newRequest(room, day, prestige));
         if (number == 0)
         {
             System.out.println("There is no such rooms!");//todo поставить цикл
